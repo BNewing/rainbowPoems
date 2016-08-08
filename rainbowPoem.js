@@ -15,16 +15,18 @@ function displayPoem(){
 
 function start() {
 	turnColour();
-	var timer = setInterval(startColour, 500);
+	var timer = setInterval(turnColour, 2000);
 }
 
 var i = 0
 
-function startColour(){
-	var x = document.getElementsByTagName("P");
-	x[i].style.color = "red";
-	i = i + 1;
-}
+function turnColour(){
+		var x = document.getElementsByTagName("P");
+		x[i].style.color = "red";
+		i = i + 1;
+
+	}
+
 
 
 
