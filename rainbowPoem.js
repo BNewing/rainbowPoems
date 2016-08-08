@@ -13,15 +13,18 @@ function displayPoem(){
 	}
 }
 
-var timer = setInterval(turnColour, 2000)
+function start() {
+	turnColour();
+	var timer = setInterval(startColour, 500);
+}
 
-function turnColour(){
-		var x = document.getElementByTagName("P");
-		var i;
-			for (i=0; i<x.length; i++)
-			x[i].style.color = "red";
-	}
+var i = 0
 
+function startColour(){
+	var x = document.getElementsByTagName("P");
+	x[i].style.color = "red";
+	i = i + 1;
+}
 
 
 
