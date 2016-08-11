@@ -4,19 +4,6 @@ var printedJabberwocky = jabberwocky.join("");
 
 var x = document.getElementsByTagName("P");
 
-var i = 0;
-
-var j = 0;
-
-var k = 0;
-
-var l = 0;
-
-var m = 0;
-
-var n = 0;
-
-var p = 0;
 
 function displayPoem(){
 	var poemLength = jabberwocky.length;
@@ -28,105 +15,44 @@ function displayPoem(){
 	}
 }
 
-function startRed(){
-	turnRed();
-	var timer = setInterval(turnRed, 200);
-}
-
-function turnRed(){
-	if(i<x.length){
-		x[i].style.color = "red";
-		i = i + 1;
-	}
-	else{
-		startOrange();
-	}
-}
-
-function startOrange(){
-	turnOrange();
-	var timer = setInterval(turnOrange, 500);
-}
-
-function turnOrange(){
-	if(j<x.length){
-		x[j].style.color = "orange";
-		j = j + 1;
-	}
-	else{
-		startYellow();
-	}
-}
-
-function startYellow(){
-	turnYellow();
-	var timer = setInterval(turnYellow, 1000);
-}
-
-function turnYellow(){
-	if(k<x.length){
-		x[k].style.color = "yellow";
-		k = k + 1;
-	}
-	else{
-		startGreen();
-	}
-}
-
-function startGreen(){
-	turnGreen();
-	var timer = setInterval(turnGreen, 200);
-}
-
-function turnGreen(){
-	if(l<x.length){
-		x[l].style.color = "green";
-		l = l + 1;
-	}
-	else{
-		startBlue();
-	}
-}
-
-function startBlue(){
-	turnBlue();
-	var timer = setInterval(turnBlue, 200);
-}
-
-function turnBlue(){
-	if(m<x.length){
-		x[m].style.color = "blue";
-		m = m + 1;
-	}
-	else{
-		startIndigo();
-	}
-}
-
-function startIndigo(){
-	turnIndigo();
-	var timer = setInterval(turnIndigo, 200);
-}
-
-function turnIndigo(){
+function turn(color, nextFunction, n=0){
 	if(n<x.length){
-		x[n].style.color = "indigo";
-		n = n + 1;
+		x[n].style.color = color;
+		setTimeout(turn, 10, color, nextFunction, n+1);
 	}
 	else{
-		startViolet();
+		setTimeout(nextFunction, 0);
 	}
 }
 
-function startViolet(){
-	turnViolet();
-	var timer = setInterval(turnViolet, 200);
+function startRed(){
+	turnRed(0);
 }
 
-function turnViolet(){
-	if(p<x.length){
-		x[p].style.color = "violet";
-		p = p + 1;
-	}
+function turnRed(n=0){
+	turn("red", turnOrange)
 }
 
+function turnOrange(n=0){
+	turn("orange", turnYellow)
+}
+
+function turnYellow(n=0){
+	turn("yellow", turnGreen)
+}
+
+function turnGreen(n=0){
+	turn("green", turnBlue)
+}
+
+function turnBlue(n=0){
+	turn("blue", turnIndigo)
+}
+
+function turnIndigo(n=0){
+	turn("indigo", turnViolet)
+}
+
+function turnViolet(n=0){
+	turn("violet", turnRed)
+}
