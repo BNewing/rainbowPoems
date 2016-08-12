@@ -6,6 +6,8 @@ var x = document.getElementsByTagName("P");
 
 var poem;
 
+var j=0;
+
 function jabberwockySelected(){
 	poem = jabberwocky;
 	displayPoem();
@@ -14,6 +16,10 @@ function jabberwockySelected(){
 function dreamWithinADreamSelected(){
 	poem = dreamWithinADream;
 	displayPoem();
+}
+
+function stopTheRainbow(){
+	j=1;
 }
 
 function displayPoem(){
@@ -29,6 +35,9 @@ function displayPoem(){
 }
 
 function turn(color, nextFunction, n=0){
+	if(j===1){
+		document.getElementsByTagName("p").style.color = "black";
+	}
 	if(n<x.length){
 		x[n].style.color = color;
 		setTimeout(turn, 10, color, nextFunction, n+1);
@@ -39,6 +48,7 @@ function turn(color, nextFunction, n=0){
 }
 
 function startRed(){
+	j=0;
 	turnRed(0);
 }
 
