@@ -16,7 +16,7 @@ function dreamWithinADreamSelected(){
 }
 
 function stopTheRainbow(){
-	j=1;
+	j = 1;
 }
 
 function displayPoem(){
@@ -37,7 +37,7 @@ function turn(color, nextFunction, n=0){
 	}
 	if(n<x.length){
 		x[n].style.color = color;
-		setTimeout(turn, 10, color, nextFunction, n+1);
+		setTimeout(turn, 20, color, nextFunction, n+1);
 	}
 	else{
 		setTimeout(nextFunction, 0);
