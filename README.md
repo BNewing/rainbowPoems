@@ -6,9 +6,9 @@ Marten at Zooniverse showed me functional programming and helped me write the Ja
 
 ## 1. Technologies Used
 
-HTML
-CSS
-JavaScript
+- HTML
+- CSS
+- JavaScript
 
 ## 2. How to Suggest a Change
 
@@ -18,4 +18,4 @@ https://help.github.com/articles/creating-a-pull-request-from-a-fork/
 
 ## 3. What the Project Looks Like
 
-<img href="screenshot.png">
+<img src="screenshot.PNG" alt="screenshot of the poem page">
